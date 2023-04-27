@@ -1,0 +1,103 @@
+# do register32.do 
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module register32
+# 
+# Top level modules:
+# 	register32
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module register32_vlg_sample_tst
+# -- Compiling module register32_vlg_check_tst
+# -- Compiling module register32_vlg_vec_tst
+# 
+# Top level modules:
+# 	register32_vlg_vec_tst
+# vsim -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -t 1ps -novopt work.register32_vlg_vec_tst 
+# Loading work.register32_vlg_vec_tst
+# Loading work.register32
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading altera_ver.dffeas
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading work.register32_vlg_sample_tst
+# Loading work.register32_vlg_check_tst
+# Loading altera_ver.PRIM_GDFF_LOW
+# ERROR! Vector Mismatch for output port Q[0] :: @time = 80000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00110001110100000111011101111011
+# ERROR! Vector Mismatch for output port Q[1] :: @time = 80000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00110001110100000111011101111011
+# ERROR! Vector Mismatch for output port Q[3] :: @time = 80000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00110001110100000111011101111011
+# ERROR! Vector Mismatch for output port Q[4] :: @time = 80000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00110001110100000111011101111011
+# ERROR! Vector Mismatch for output port Q[5] :: @time = 80000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00110001110100000111011101111011
+# ERROR! Vector Mismatch for output port Q[6] :: @time = 80000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00110001110100000111011101111011
+# ERROR! Vector Mismatch for output port Q[8] :: @time = 80000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00110001110100000111011101111011
+# ERROR! Vector Mismatch for output port Q[9] :: @time = 80000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00110001110100000111011101111011
+# ERROR! Vector Mismatch for output port Q[10] :: @time = 80000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00110001110100000111011101111011
+# ERROR! Vector Mismatch for output port Q[12] :: @time = 80000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00110001110100000111011101111011
+# ERROR! Vector Mismatch for output port Q[13] :: @time = 80000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00110001110100000111011101111011
+# ERROR! Vector Mismatch for output port Q[14] :: @time = 80000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00110001110100000111011101111011
+# ERROR! Vector Mismatch for output port Q[20] :: @time = 80000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00110001110100000111011101111011
+# ERROR! Vector Mismatch for output port Q[22] :: @time = 80000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00110001110100000111011101111011
+# ERROR! Vector Mismatch for output port Q[23] :: @time = 80000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00110001110100000111011101111011
+# ERROR! Vector Mismatch for output port Q[24] :: @time = 80000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00110001110100000111011101111011
+# ERROR! Vector Mismatch for output port Q[28] :: @time = 80000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00110001110100000111011101111011
+# ERROR! Vector Mismatch for output port Q[29] :: @time = 80000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00110001110100000111011101111011
+# ERROR! Vector Mismatch for output port Q[7] :: @time = 240000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 01000010110101100101110010110001
+# ERROR! Vector Mismatch for output port Q[11] :: @time = 240000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 01000010110101100101110010110001
+# ERROR! Vector Mismatch for output port Q[17] :: @time = 240000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 01000010110101100101110010110001
+# ERROR! Vector Mismatch for output port Q[18] :: @time = 240000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 01000010110101100101110010110001
+# ERROR! Vector Mismatch for output port Q[25] :: @time = 240000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 01000010110101100101110010110001
+# ERROR! Vector Mismatch for output port Q[30] :: @time = 240000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 01000010110101100101110010110001
+#          24 mismatched vectors : Simulation failed !
+# ** Note: $finish    : register32.vt(711)
+#    Time: 400 ns  Iteration: 0  Instance: /register32_vlg_vec_tst/tb_out

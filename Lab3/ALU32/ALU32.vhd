@@ -1,0 +1,131 @@
+library IEEE;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+entity ALU32 is
+	port (a					: in  	std_logic_vector(7 downto 0);	--operand 1
+			b					: in		std_logic_vector(7 downto 0);	--operand 2
+			op					: in		std_logic_vector(2 downto 0);		--operation selection
+			result			: inout	std_logic_vector(7 downto 0);	--operation result
+			cout				: out		std_logic;								--carry out flag
+			zero				: out 	std_logic								--zero flag
+	);
+end ALU32;
+
+architecture behavior of ALU32 is
+	--internal components
+	
+	--32-bit adder
+	component FullAdder32 is
+		port (a_in		: in  std_logic_vector(7 downto 0);	--Operand 1
+				b_in		: in  std_logic_vector(7 downto 0);	--Operand 2
+				c_in		: in  std_logic;								--Carry in (Maybe from previous stage)
+				result	: out std_logic_vector(7 downto 0);	--Result
+				c_out		: out std_logic								--Carry out (Maybe for next stage)
+		);
+	end component;
+	
+	--32-bit AND Gate
+	component AND32 is
+		port (a_in		: in  std_logic_vector(7 downto 0);	--Operand 1
+				b_in		: in  std_logic_vector(7 downto 0);	--Operand 2
+				result	: out std_logic_vector(7 downto 0)		--Result
+		);
+	end component;
+	
+	--32-bit OR Gate
+	component OR32 is
+		port (a_in		: in  std_logic_vector(7 downto 0);	--Operand 1
+				b_in		: in  std_logic_vector(7 downto 0);	--Operand 2
+				result	: out std_logic_vector(7 downto 0)		--Result
+		);
+	end component;
+	
+	--32-bit logical shift right
+	component RightShift32 is
+		port (a_in		: in  std_logic_vector(7 downto 0);	--Operand 1
+				result	: out std_logic_vector(7 downto 0)		--Result
+		);
+	end component;
+	
+	--32-bit logical shift left
+	component LeftShift32 is
+		port (a_in		: in  std_logic_vector(7 downto 0);	--Operand 1
+				result	: out std_logic_vector(7 downto 0)		--Result
+		);
+	end component;
+	
+	--32-bit 8-to-1 multiplexer
+	component mux8to1 is
+		port (in0, in1, in2, in3, in4, in5, in6, in7	: in	std_logic_vector(7 downto 0);	--mux input signal choices
+				sel												: in	std_logic_vector(2 downto 0);		--select
+				y													: out	std_logic_vector(7 downto 0)		--mux output signal
+		);
+	end component;
+	
+	--32-bit 2-to-1 multiplexer
+	component mux2to1 is
+		port (in0, in1		: in  std_logic_vector(7 downto 0);	--mux input signal choices
+				sel			: in	std_logic;								--select
+				y				: out std_logic_vector(7 downto 0)		--mux output signal
+		);
+	end component;
+	
+	--32-bit NOT Gate
+	component NOT32 is
+		port (x		: in  std_logic_vector(7 downto 0);	--Input Signal
+				y		: out std_logic_vector(7 downto 0)		--Output Signal
+		);
+	end component;
+	
+	--Internal Wires
+	signal andResult		:std_logic_vector(7 downto 0);
+	signal orResult		:std_logic_vector(7 downto 0);
+	signal adderResult	:std_logic_vector(7 downto 0);
+	signal lslResult		:std_logic_vector(7 downto 0);
+	signal lsrResult		:std_logic_vector(7 downto 0);
+	signal bNegOrNot		:std_logic_vector(7 downto 0);
+	signal bNot				:std_logic_vector(7 downto 0);
+
+begin
+	--Connect the 8-to-1 multiplexer
+	mux1: mux8to1 port map(	in0 => andResult,
+									in1 => orResult,
+									in2 => adderResult,
+									in3 => "ZZZZZZZZ",
+									in4 => lslResult,
+									in5 => lsrResult,
+									in6 => adderResult,
+									in7 => "ZZZZZZZZ",
+									sel => op,
+									y 	 => result);
+	
+	--Connect the 32-bit adder
+	adder1: FullAdder32 port map(	a_in   => a,
+											b_in 	 => bNegOrNot,
+											c_in   => op(2),
+											result => adderResult,
+											c_out  => cout);
+											
+	--Connect the 32-bit AND gate
+	and1: AND32 port map (a, b, andResult);
+	
+	--Connect the 32-bit OR gate
+	or1: OR32 port map (a, b, orResult);
+	
+	--Connect the 32-bit Logical Shift Right
+	lsr1: RightShift32 port map (a, lsrResult);
+	
+	--Connect the 32-bit Logical Shift Left
+	lsl1: LeftShift32 port map (a, lslResult);
+	
+	--Connect the b negative decider mux
+	nexMux: mux2to1 port map(	in0 => b,
+										in1 => bNot,
+										sel => op(2),
+										y   => bNegOrNot);
+	
+	--Connect the 32-bit NOT gate
+	notber: NOT32 port map(b, bNot);
+end behavior;	

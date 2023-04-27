@@ -1,0 +1,21 @@
+library IEEE;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+entity mux2to1 is
+	port (in0, in1		: in  std_logic_vector(31 downto 0);	--mux input signal choices
+			sel			: in	std_logic;								--select
+			y				: out std_logic_vector(31 downto 0)		--mux output signal
+	);
+end mux2to1;
+
+architecture behavior of mux2to1 is
+begin
+	process(sel, in0, in1)
+		begin
+			case sel is
+				when '0' => y <= in0;	--send 0 signal out
+				when '1' => y <= in1;	--send 1 signal out
+				when others => y <= "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ";
+end behavior;

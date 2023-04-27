@@ -1,0 +1,38 @@
+# do data_path.do 
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module data_path
+# 
+# Top level modules:
+# 	data_path
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module data_path_vlg_sample_tst
+# -- Compiling module data_path_vlg_check_tst
+# -- Compiling module data_path_vlg_vec_tst
+# 
+# Top level modules:
+# 	data_path_vlg_vec_tst
+# vsim -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -t 1ps -novopt work.data_path_vlg_vec_tst 
+# Loading work.data_path_vlg_vec_tst
+# Loading work.data_path
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading altera_ver.dffeas
+# Loading cycloneive_ver.cycloneive_ram_block
+# Loading cycloneive_ver.cycloneive_ram_register
+# Loading cycloneive_ver.cycloneive_ram_pulse_generator
+# Loading work.data_path_vlg_sample_tst
+# Loading work.data_path_vlg_check_tst
+# Loading instances from data_path_v.sdo
+# Loading altera_ver.PRIM_GDFF_LOW
+# Loading timing data from data_path_v.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /data_path_vlg_vec_tst File: data_path.vt
+# Simulation passed !
+# ** Note: $finish    : data_path.vt(5047)
+#    Time: 1 us  Iteration: 0  Instance: /data_path_vlg_vec_tst/tb_out

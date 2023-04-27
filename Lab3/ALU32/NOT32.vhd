@@ -1,0 +1,15 @@
+library IEEE;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+entity NOT32 is
+	port (x		: in  std_logic_vector(7 downto 0);	--Input Signal
+			y		: out std_logic_vector(7 downto 0)		--Output Signal
+	);
+end NOT32;
+
+architecture behavior of NOT32 is
+begin
+	y <= not x;
+end behavior;
