@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\COE608\introtutorial\simulation\qsim
+vlight
+Z1 IYJ4geWEi7RCRd8ccLi7lW0
+Z2 V<X>;[O2;znUk0VMemUTWA2
+Z3 dC:\COE608\introtutorial\simulation\qsim
+Z4 w1674227586
+Z5 8light.vo
+Z6 Flight.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|light.vo|
+Z9 o-work work -O0
+!i10b 1
+Z10 !s100 L3M<ki7^jP@Y@;`:ANz@c0
+!s85 0
+Z11 !s108 1674227586.665000
+Z12 !s107 light.vo|
+!s101 -O0
+vlight_vlg_check_tst
+!i10b 1
+Z13 !s100 HLn34Z1=XYYa@VS:g_n0_1
+Z14 I1fHJLZSzH4<QaWoQA`ncO0
+Z15 Vh_[_k?ZM@DPYA6BHV62m82
+R3
+Z16 w1674227585
+Z17 8light.vt
+Z18 Flight.vt
+L0 59
+R7
+r1
+!s85 0
+31
+Z19 !s108 1674227586.721000
+Z20 !s107 light.vt|
+Z21 !s90 -work|work|light.vt|
+!s101 -O0
+R9
+vlight_vlg_sample_tst
+!i10b 1
+Z22 !s100 dR0hLO9`o<NMW5W?S]bi41
+Z23 IDYC`UY`U=HG7;lza1VFbz0
+Z24 V3fbSO?WL8[zEh1IlDPd=^0
+R3
+R16
+R17
+R18
+L0 29
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
+vlight_vlg_vec_tst
+!i10b 1
+Z25 !s100 b6OemXdNQ_O<4MTHU3TDE1
+Z26 IZ6lYZ4J^g9YcdFT0CHD];0
+Z27 V;IThR5jgidSm]hb5A0b_=3
+R3
+R16
+R17
+R18
+Z28 L0 154
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
